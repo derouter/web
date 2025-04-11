@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeRouter - Decentralized Service Marketplace</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .gradient-bg {
+      background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
+    }
+
+    .network-graphic {
+      position: relative;
+      height: 400px;
+    }
+
+    .node {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #6e8efb;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(110, 142, 251, 0.7);
+    }
+
+    .connection {
+      position: absolute;
+      background: rgba(110, 142, 251, 0.3);
+      transform-origin: 0 0;
+    }
+
+    .protocol-icon {
+      transition: all 0.3s ease;
+    }
+
+    .protocol-icon:hover {
+      transform: translateY(-5px);
+      filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+    }
+  </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-gray-50">
+  <header class="gradient-bg text-white">
+    <div class="container mx-auto px-6 py-16 text-center">
+      <h1 class="text-5xl font-bold mb-4">DeRouter</h1>
+      <p class="text-xl mb-8 opacity-90">The decentralized protocol-agnostic service marketplace</p>
+      <a href="https://github.com/derouter/derouter" target="_blank"
+        class="inline-flex items-center px-6 py-3 bg-white text-indigo-600 rounded-full font-semibold hover:bg-gray-100 transition duration-300">
+        <i class="fab fa-github mr-2"></i> Star on GitHub
+      </a>
+    </div>
+  </header>
+
+  <section class="py-20">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <h2 class="text-3xl font-bold mb-6">Any Protocol, Any Service</h2>
+          <p class="text-lg mb-6 text-gray-600">
+            DeRouter is designed to work with any API imaginable - LLMs, text-to-image, TTS, and more.
+            The protocol-agnostic architecture means the network can adapt to future technologies seamlessly.
+          </p>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="protocol-icon text-center p-4">
+              <i class="fas fa-robot text-4xl text-indigo-500 mb-2"></i>
+              <p class="font-medium">LLMs</p>
+            </div>
+            <div class="protocol-icon text-center p-4">
+              <i class="fas fa-image text-4xl text-purple-500 mb-2"></i>
+              <p class="font-medium">Text2Image</p>
+            </div>
+            <div class="protocol-icon text-center p-4">
+              <i class="fas fa-microphone-alt text-4xl text-pink-500 mb-2"></i>
+              <p class="font-medium">TTS</p>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2 network-graphic" id="networkGraphic">
+          <!-- Nodes and connections will be added via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-12 text-center">How DeRouter Works</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+          <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white text-2xl mb-4">1
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Providers Offer Services</h3>
+          <p class="text-gray-600">
+            Providers publish digital service offers with protocol specifications and pricing.
+            Current implementation includes OpenAI-compatible services.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+          <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white text-2xl mb-4">2
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Network Discovers Offers</h3>
+          <p class="text-gray-600">
+            DeRouter nodes connect via P2P using mDNS and bootstrap nodes.
+            The network maintains an up-to-date list of available services.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+          <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white text-2xl mb-4">3
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Consumers Connect & Pay</h3>
+          <p class="text-gray-600">
+            Consumers find the best matching offers and connect directly.
+            Future implementations will include cryptocurrency payments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Join the Decentralized Future</h2>
+        <p class="text-lg mb-8 text-gray-600">
+          DeRouter is currently in alpha stage with working P2P node implementation and OpenAI protocol support.
+          Help shape the future of decentralized services by contributing to the project.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="https://github.com/derouter/derouter" target="_blank"
+            class="px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition duration-300 flex items-center justify-center">
+            <i class="fab fa-github mr-2"></i> Star on GitHub
+          </a>
+          <a href="https://discord.gg/vRuWUzfRpW" target="_blank"
+            class="px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition duration-300 flex items-center justify-center">
+            <i class="fab fa-discord mr-2"></i> Join Discord
+          </a>
+          <a href="https://www.reddit.com/r/derouter" target="_blank"
+            class="px-6 py-3 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600 transition duration-300 flex items-center justify-center">
+            <i class="fab fa-reddit-alien mr-2"></i> Reddit
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-10 bg-gray-900 text-gray-400">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <p>© 2025 DeRouter. All rights reserved.</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="https://github.com/derouter" target="_blank" class="hover:text-white transition duration-300">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a href="https://discord.gg/vRuWUzfRpW" target="_blank" class="hover:text-white transition duration-300">
+            <i class="fab fa-discord text-xl"></i>
+          </a>
+          <a href="https://www.reddit.com/r/derouter" target="_blank" class="hover:text-white transition duration-300">
+            <i class="fab fa-reddit-alien text-xl"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Create network visualization
+    document.addEventListener('DOMContentLoaded', function () {
+      const container = document.getElementById('networkGraphic');
+      const width = container.offsetWidth;
+      const height = container.offsetHeight;
+
+      // Create nodes
+      const nodeCount = 15;
+      const nodes = [];
+
+      for (let i = 0; i < nodeCount; i++) {
+        const node = document.createElement('div');
+        node.className = 'node';
+
+        // Position nodes in a circular pattern with some randomness
+        const angle = (i / nodeCount) * Math.PI * 2;
+        const radius = Math.min(width, height) * 0.35;
+        const centerX = width / 2;
+        const centerY = height / 2;
+
+        const x = centerX + radius * Math.cos(angle) + (Math.random() * 40 - 20);
+        const y = centerY + radius * Math.sin(angle) + (Math.random() * 40 - 20);
+
+        node.style.left = `${x}px`;
+        node.style.top = `${y}px`;
+
+        // Make some nodes larger (representing providers)
+        if (i % 3 === 0) {
+          node.style.width = '30px';
+          node.style.height = '30px';
+          node.style.background = '#a777e3';
+        }
+
+        container.appendChild(node);
+        nodes.push({ x, y });
+      }
+
+      // Create connections between nodes
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          // Only connect some nodes (random chance)
+          if (Math.random() > 0.7) {
+            const node1 = nodes[i];
+            const node2 = nodes[j];
+
+            const length = Math.sqrt(
+              Math.pow(node2.x - node1.x, 2) +
+              Math.pow(node2.y - node1.y, 2)
+            );
+
+            const angle = Math.atan2(
+              node2.y - node1.y,
+              node2.x - node1.x
+            ) * 180 / Math.PI;
+
+            const connection = document.createElement('div');
+            connection.className = 'connection';
+            connection.style.width = `${length}px`;
+            connection.style.height = '2px';
+            connection.style.left = `${node1.x}px`;
+            connection.style.top = `${node1.y}px`;
+            connection.style.transform = `rotate(${angle}deg)`;
+
+            container.appendChild(connection);
+          }
+        }
+      }
+
+      // Add pulsing animation to random nodes
+      setInterval(() => {
+        const randomNode = document.querySelectorAll('.node')[Math.floor(Math.random() * nodeCount)];
+        randomNode.style.transform = 'scale(1.5)';
+        randomNode.style.transition = 'transform 0.5s ease';
+
+        setTimeout(() => {
+          randomNode.style.transform = 'scale(1)';
+        }, 500);
+      }, 800);
+    });
+  </script>
+</body>
+
+</html>
